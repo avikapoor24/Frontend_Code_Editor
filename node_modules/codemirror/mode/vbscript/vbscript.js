@@ -1,5 +1,5 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: https://codemirror.net/5/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
 /*
 For extra ASP classic objects, initialize CodeMirror instance with this option:
@@ -32,7 +32,7 @@ CodeMirror.defineMode("vbscript", function(conf, parserConf) {
     var singleOperators = new RegExp("^[\\+\\-\\*/&\\\\\\^<>=]");
     var doubleOperators = new RegExp("^((<>)|(<=)|(>=))");
     var singleDelimiters = new RegExp('^[\\.,]');
-    var brackets = new RegExp('^[\\(\\)]');
+    var brakets = new RegExp('^[\\(\\)]');
     var identifiers = new RegExp("^[A-Za-z][_A-Za-z0-9]*");
 
     var openingKeywords = ['class','sub','select','while','if','function', 'property', 'with', 'for'];
@@ -183,7 +183,7 @@ CodeMirror.defineMode("vbscript", function(conf, parserConf) {
             return null;
         }
 
-        if (stream.match(brackets)) {
+        if (stream.match(brakets)) {
             return "bracket";
         }
 

@@ -1,5 +1,5 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: https://codemirror.net/5/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
 // Modelica support for CodeMirror, copyright (c) by Lennart Ochel
 
@@ -90,7 +90,7 @@
         return "error";
     }
 
-    function tokenUnsignedNumber(stream, state) {
+    function tokenUnsignedNuber(stream, state) {
       stream.eatWhile(isDigit);
       if (stream.eat('.')) {
         stream.eatWhile(isDigit);
@@ -164,9 +164,9 @@
         else if(ch == '"') {
           state.tokenize = tokenString;
         }
-        // UNSIGNED_NUMBER
+        // UNSIGNED_NUBER
         else if(isDigit.test(ch)) {
-          state.tokenize = tokenUnsignedNumber;
+          state.tokenize = tokenUnsignedNuber;
         }
         // ERROR
         else {

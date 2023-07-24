@@ -1,5 +1,5 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: https://codemirror.net/5/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
@@ -54,9 +54,9 @@ CodeMirror.defineMode("r", function(config) {
     } else if (ch == "`") {
       stream.match(/[^`]+`/);
       return "variable-3";
-    } else if (ch == "." && stream.match(/.(?:[.]|\d+)/)) {
+    } else if (ch == "." && stream.match(/.[.\d]+/)) {
       return "keyword";
-    } else if (/[a-zA-Z\.]/.test(ch)) {
+    } else if (/[\w\.]/.test(ch) && ch != "_") {
       stream.eatWhile(/[\w\.]/);
       var word = stream.current();
       if (atoms.propertyIsEnumerable(word)) return "atom";
